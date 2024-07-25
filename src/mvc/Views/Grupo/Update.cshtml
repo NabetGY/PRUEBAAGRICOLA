@@ -1,0 +1,34 @@
+﻿@model mvc.Models.GrupoAddViewModel
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<form asp-controller="Grupo" asp-action="Update">
+
+    <div class="row">
+        <div class="col-sm-8">
+            <h2>Editar item</h2>
+
+            <input type="hidden" asp-for="Id" />
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Nombre: </label>
+                <div class="col-sm-10">
+                    <input class="form-control" asp-for="Nombre" type="text"/>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label asp-for="Id_Lote" class="col-sm-2 col-form-label">Lote: </label>
+                <div class="col-sm-10">
+                    <select asp-for="Id_Lote" asp-items="Model.Lotes" class="form-select" ></select>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <a asp-controller="Grupo" asp-action="Index" class="btn btn-warning">Volver</a>
+
+        </div>
+    </div>
+</form>

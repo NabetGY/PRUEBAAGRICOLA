@@ -1,0 +1,48 @@
+﻿@model mvc.Models.Finca
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<form asp-controller="Home" asp-action="Update">
+
+    <div class="row">
+        <div class="col-sm-8">
+            <h2>Editar item</h2>
+
+            <input type="hidden" asp-for="Id" />
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Nombre: </label>
+                <div class="col-sm-10">
+                    <input class="form-control" asp-for="Nombre" type="text"/>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Ubicacion: </label>
+                <div class="col-sm-10">
+                    <input class="form-control" asp-for="Ubicacion" type="text"/>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Hectareas: </label>
+                <div class="col-sm-10">
+                    <input class="form-control" asp-for="Hectareas" type="number"/>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Descripcion: </label>
+                <div class="col-sm-10">
+                    <input class="form-control" asp-for="Descripcion" type="text"/>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <a asp-controller="Home" asp-action="Index" class="btn btn-warning">Volver</a>
+
+        </div>
+    </div>
+</form>

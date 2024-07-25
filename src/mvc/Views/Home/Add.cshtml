@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Agregar";
+}
+
+@model mvc.Models.Finca;
+<form asp-controller="Home" asp-action="Add" method="post">
+
+    <div class="row">
+        <div class="col-sm-8">
+            <h2>Nuevo item</h2>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label" for="">Nombre: </label>
+                <div class="col-sm-10">
+                    <input class="form-control" asp-for="Nombre" type="text">
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label" for="">Ubicacion: </label>
+                <div class="col-sm-10">
+                    <input class="form-control" asp-for="Ubicacion" type="text">
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label" for="">Hectareas: </label>
+                <div class="col-sm-10">
+                    <input class="form-control" asp-for="Hectareas" type="number">
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label" for="">Descripcion: </label>
+                <div class="col-sm-10">
+                    <input class="form-control" asp-for="Descripcion" type="text">
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <a asp-controller="Home" asp-action="Index" class="btn btn-warning">Volver</a>
+
+        </div>
+    </div>
+</form>

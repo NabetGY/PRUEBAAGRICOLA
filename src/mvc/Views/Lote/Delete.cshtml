@@ -1,0 +1,24 @@
+﻿@model mvc.Models.Lote
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<form asp-controller="Lote" asp-action="Delete">
+
+    <div class="row">
+        <div class="col-sm-8">
+            <h2>Eliminar item</h2>
+
+            <input type="hidden" asp-for="Id" />
+
+            <div class="mb-3 row">
+                <span>Desea eliminar el item con el nombre: @Model.Nombre ?</span>
+            </div>
+
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+            <a asp-controller="Lote" asp-action="Index" class="btn btn-warning">Volver</a>
+
+        </div>
+    </div>
+</form>

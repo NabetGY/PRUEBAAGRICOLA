@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Lote>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+
+    <h1 class="display-4">Lotes</h1>
+
+    <table class="table">
+
+        <a asp-controller="Lote" asp-action="Add" class="btn btn-primary">Agregar</a>
+
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Arboles</th>
+                <th scope="col">Etapa</th>
+                <th scope="col">Finca</th>
+                <th scope="col">Opciones</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var lote in Model)
+            {
+                <tr>
+                    <th scope="row">@lote.Id</th>
+                    <td>@lote.Nombre</td>
+                    <td>@lote.Arboles</td>
+                    <td>@lote.Etapa</td>
+                    <td>@lote.FincaNombre</td>
+                    <td>
+                        <a 
+                            asp-asp-controller="Home" 
+                            asp-action="Update"
+                            asp-route-id="@lote.Id"
+                            class="btn btn-warning"
+                        >
+                            Editar
+                        </a>
+                        <a 
+                            class="btn btn-danger"
+                            asp-asp-controller="Home" 
+                            asp-action="Delete"
+                            asp-route-id="@lote.Id"
+                        >
+                            Eliminar
+                        </a>
+                    </td>
+
+
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+</div>
